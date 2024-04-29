@@ -1,0 +1,23 @@
+.app-container {
+	min-width: 100vw;
+	min-height: 100vh;
+}
+
+.header-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 35px;
+}
+
+.header-logo {
+	display: flex;
+}
+
+.header-menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
