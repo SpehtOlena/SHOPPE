@@ -4,7 +4,7 @@ import './index.css';
 import { RouterProvider } from 'react-router-dom';
 import { routes } from './routes';
 import { ConfigProvider } from 'antd';
-import "./styles/reset.css"
+import "./styles/reset.css";
 import configTheme from './styles/configTheme';
 
 

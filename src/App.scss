@@ -1,6 +1,11 @@
+@import './styles/main.scss';
+
+
 .app-container {
 	min-width: 100vw;
 	min-height: 100vh;
+	padding: 46px 64px;
+	font-family: $first-font;
 }
 
 .header-container {
@@ -9,15 +14,68 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 35px;
+	height: 65px;
+	border-bottom: 1px solid $gray;
+
 }
 
 .header-logo {
 	display: flex;
+
+	img {
+		width: 140px;
+	}
 }
 
 .header-menu {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: center;
+	gap: 35px;
 	width: 100%;
+
+	li {
+		font-size: 16px;
+
+		&:hover {
+			border-bottom: 1px solid $black;
+			opacity: 0.7;
+		}
+
+		&:focus {
+			border-bottom: 3px solid $black;
+		}
+	}
+
+	.active-menu-item {
+		border-bottom: 2px solid $black;
+	}
+
+	.header-menu-icons {
+		display: flex;
+		align-items: flex-end;
+		margin-top: 10px;
+
+		span {
+			font-size: 26px;
+			color: #D8D8D8;
+		}
+	}
+}
+
+.ant-layout-header {
+	padding: 0;
+}
+
+.footer-container {
+	color: $dark-gray;
+}
+
+.footer-menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }

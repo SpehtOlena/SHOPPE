@@ -10,7 +10,12 @@ export default {
 		"Layout": {
 			"headerColor": "rgb(0, 0, 0)",
 			"headerBg": "rgb(255, 255, 255)",
-			"bodyBg": "rgb(255, 255, 255)"
+			"bodyBg": "rgb(255, 255, 255)",
+			"footerBg": "rgb(255, 255, 255)"
+		},
+		"Divider": {
+			"colorSplit": "rgb(239, 239, 239)",
+			"lineWidth": 2
 		}
 	}
 }
