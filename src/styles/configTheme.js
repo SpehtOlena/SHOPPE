@@ -16,6 +16,12 @@ export default {
 		"Divider": {
 			"colorSplit": "rgb(239, 239, 239)",
 			"lineWidth": 2
+		},
+		"Carousel": {
+			"dotWidth": 8,
+			"dotActiveWidth": 8,
+			"colorBgContainer": "rgb(255, 255, 252)",
+			"dotHeight": 8
 		}
 	}
 }

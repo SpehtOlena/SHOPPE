@@ -1,0 +1,135 @@
+@import '../../styles/main.scss';
+
+.banner {
+	width: 100%;
+	height: 620px;
+	display: flex !important;
+	justify-content: space-between;
+	background-color: #CDCDCD;
+	margin-bottom: 20px;
+	border-radius: 16px;
+	overflow: hidden;
+}
+
+
+.banner-container {
+	background: linear-gradient(90deg, #CDCDCD 0%, #CDCDCD 24.79%, #e2e3e6 74.48%, rgba(243, 239, 238, 0.00) 100%);
+	width: 60%;
+	z-index: 3;
+	position: relative;
+	left: 15%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	padding-bottom: 50px;
+}
+
+.banner-content {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	gap: 25px;
+
+	h3 {
+		font-family: $first-font;
+		font-weight: 500;
+		font-size: 33px;
+		line-height: 130%;
+		color: $white;
+	}
+
+	h4 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 26px;
+		line-height: 135%;
+		color: $white;
+	}
+}
+
+
+@media (max-width: 1680px) {
+	.banner-container {
+		width: 65%;
+	}
+
+	.banner-content {
+		width: 90%;
+		position: relative;
+		left: -10vw;
+	}
+}
+
+.banner-title {
+	font-family: Oswald;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 129%;
+	text-transform: uppercase;
+	color: #000;
+	display: block;
+}
+
+.banner-content p {
+	font-family: Roboto;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 148%;
+	letter-spacing: 0.01em;
+	color: #000;
+}
+
+
+@media (max-width: 1280px) {
+	.banner-container {
+		width: 60%;
+	}
+
+	.banner-content {
+		width: 100%;
+		position: relative;
+		left: -12vw;
+	}
+
+	.banner-title {
+		font-size: 34px;
+	}
+
+	.banner-content p {
+		font-size: 20px;
+	}
+}
+
+.banner-bgi {
+	z-index: 1;
+	position: relative;
+	width: 60%;
+	right: 0;
+	object-fit: cover;
+}
+
+@media (max-width: 980px) {
+	.banner {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	.banner-container {
+		padding-bottom: 20px;
+		width: 90%;
+	}
+
+	.banner-bgi {
+		z-index: 1;
+		position: relative;
+		width: 100%;
+		right: 0;
+		object-fit: cover;
+	}
+}
+
+.ant-carousel .slick-dots-bottom {
+	bottom: 40px;
+}
