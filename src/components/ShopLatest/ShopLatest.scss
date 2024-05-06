@@ -1,0 +1,30 @@
+@import '../../styles/main.scss';
+
+.shop-latest-container {
+	display: flex;
+	flex-direction: column;
+	margin: 64px 0 180px;
+	gap: 39px;
+
+	h3 {
+		font-family: $first-font;
+		font-weight: 500;
+		font-size: 33px;
+		line-height: 130%;
+		color: $black;
+	}
+}
+
+.shop-latest-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.shop-latest-items {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 86px 54px;
+}

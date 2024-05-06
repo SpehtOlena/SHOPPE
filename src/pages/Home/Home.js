@@ -1,12 +1,12 @@
 import Banner from '../../components/Banner/Banner'
-import Button from '../../components/Button/Button'
-import './Home.scss'
+import ShopLatest from '../../components/ShopLatest/ShopLatest'
+import './Home.scss';
 
 const Home = () => {
 	return (
 		<div>
 			<Banner />
-			<Button type={'primary'} children={'add to cart'} />
+			<ShopLatest />
 		</div>
 	)
 }

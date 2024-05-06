@@ -13,7 +13,7 @@ const Banner = () => {
 			<div className={'banner'}>
 				<div className={'banner-container'}>
 					<div className={'banner-content'}>
-						<h3>Gold big hoops </h3>
+						<h3>Gold big hoops</h3>
 						<h4>$ 68,00</h4>
 						<Button type={'primary'} children={'View Product'} />
 					</div>
@@ -23,7 +23,7 @@ const Banner = () => {
 			<div className={'banner'}>
 				<div className={'banner-container'}>
 					<div className={'banner-content'}>
-						<h3>Ggld earrings </h3>
+						<h3>Gold earrings</h3>
 						<h4>$ 76,00</h4>
 						<Button type={'primary'} children={'View Product'} />
 					</div>
@@ -33,7 +33,7 @@ const Banner = () => {
 			<div className={'banner'}>
 				<div className={'banner-container'}>
 					<div className={'banner-content'}>
-						<h3>Gold watch </h3>
+						<h3>Gold watch</h3>
 						<h4>$ 199,00</h4>
 						<Button type={'primary'} children={'View Product'} />
 					</div>
@@ -43,7 +43,7 @@ const Banner = () => {
 			<div className={'banner'}>
 				<div className={'banner-container'}>
 					<div className={'banner-content'}>
-						<h3>Earrings with pearls </h3>
+						<h3>Earrings with pearls</h3>
 						<h4>$ 113,00</h4>
 						<Button type={'primary'} children={'View Product'} />
 					</div>

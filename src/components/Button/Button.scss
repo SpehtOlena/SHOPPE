@@ -34,3 +34,40 @@
 	font-size: 20px;
 	text-transform: none;
 }
+
+.button-half-opacity {
+	@extend .button;
+	height: 65px;
+	border: none;
+	opacity: 0;
+	background-color: #f4f4f4;
+	font-family: $first-font;
+	font-weight: 700;
+	font-size: 16px;
+	color: $black;
+	border-radius: 0 0 8px 8px;
+
+	&:hover {
+		background-color: #f4f4f4;
+		display: block;
+		transition: all 0.3s ease 0s;
+		opacity: 0.9;
+		color: $black;
+	}
+}
+
+.button-link {
+	font-family: $first-font;
+	font-weight: 700;
+	font-size: 20px;
+	text-transform: capitalize;
+	color: $accent;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		color: $black;
+	}
+}

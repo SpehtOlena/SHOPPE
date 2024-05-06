@@ -8,8 +8,14 @@ const Button = ({ children, type, icon, onClick }) => {
 		case 'primary': {
 			return <button onClick={onClick} className={'button-primary'}>{children}</button>
 		}
+		case 'half-opacity': {
+			return <button onClick={onClick} className={'button-half-opacity'}>{children}</button>
+		}
 		case "icon": {
 			return <button onClick={onClick} className={'button-icon'}>{icon}{children}</button>
+		}
+		case "link": {
+			return <button onClick={onClick} className={'button-link'}>{icon}{children}</button>
 		}
 	}
 }

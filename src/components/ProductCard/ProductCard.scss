@@ -1,0 +1,66 @@
+@import '../../styles/main.scss';
+
+.product-card-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 479px;
+	position: relative;
+	width: 380px;
+	gap: 20px;
+
+	.product-card-main-photo {
+		margin-bottom: -50px;
+
+		&:hover {
+			scale: 1.02;
+			transition: all 0.3s ease 0s;
+
+			img {
+				background-color: $gray;
+			}
+		}
+	}
+
+	img {
+		position: relative;
+		z-index: 1;
+		background-color: $light-gray;
+		width: 100%;
+		border-radius: 8px;
+		cursor: pointer;
+
+
+	}
+
+	button {
+		position: relative;
+		top: -65px;
+		z-index: 3;
+		width: 100%;
+	}
+
+	h3 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 130%;
+		color: $black;
+
+	}
+
+	h4 {
+		font-family: $first-font;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 130%;
+		text-transform: capitalize;
+		color: $accent;
+	}
+}
+
+.product-card-image {
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+}
