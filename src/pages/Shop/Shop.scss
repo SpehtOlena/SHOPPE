@@ -1,0 +1,66 @@
+@import '../../styles/main.scss';
+
+.shop-container {
+	margin-top: 56px;
+}
+
+.shop-filter-item {
+	justify-content: space-between;
+	width: 100%;
+	align-items: flex-start;
+
+	h3 {
+		font-family: $first-font;
+		font-weight: 500;
+		font-size: 24px;
+		color: $black;
+	}
+
+	.filter-items-box {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px 10px !important;
+		text-transform: uppercase;
+	}
+}
+
+.filter-collapse {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding-top: 12px;
+	transition: all 0.3s ease 0s;
+}
+
+.products-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 50px;
+}
+
+.ant-pagination {
+	margin-bottom: 13px;
+	margin-top: -65px;
+}
+
+.ant-pagination-item-active a {
+	color: $black;
+}
+
+.ant-list-items {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 50px;
+}
+
+.ant-list-split .ant-list-item {
+	border-block-end: none;
+}

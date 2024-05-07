@@ -1,9 +1,15 @@
-import './ProductPage.scss'
+import { Row, Col, } from 'antd';
+import './ProductPage.scss';
+import Button from "../../components/Button/Button";
+import { useState } from 'react';
 
-const ProductPage = () => {
+
+const ProductPage = ({ value }) => {
+	const [activeImage, setActiveImage] = useState(null);
 	return (
 		<div>
-			<Row>
+			yyyy
+			{/* <Row>
 				<Col span={4}>
 					<div className={'product-card-photo'}>
 						{
@@ -15,7 +21,7 @@ const ProductPage = () => {
 					<img src={activeImage} alt="" />
 					<Button type={'half-opacity'} children={'Add to cart'} />
 				</Col>
-			</Row>
+			</Row> */}
 		</div>
 	)
 }

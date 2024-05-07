@@ -65,7 +65,9 @@ function App() {
 					</Space>
 				</div>
 			</Header>
-			<Content><Outlet /></Content>
+			<Content className={'content-container'}>
+				<Outlet />
+			</Content>
 			<Footer className={'footer-container'}>
 				<Divider />
 				<Row justify={'space-between'} align={'middle'}>
