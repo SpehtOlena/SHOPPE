@@ -20,8 +20,8 @@ const ShopLatest = () => {
 					? "LOADING"
 					: isEmpty(products)
 						? 'DATA LIST IS EMPTY'
-						: products.map((value, index) => <Link to={`/shop/${value.id}`}>
-							<ProductCard key={value.id} value={value} index={index} />
+						: products.map((value, index) => <Link key={value.id} to={`/shop/${value.id}`}>
+							<ProductCard value={value} index={index} />
 						</Link>)
 				}
 			</div>

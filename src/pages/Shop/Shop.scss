@@ -4,6 +4,20 @@
 	margin-top: 56px;
 }
 
+.selected-filters-container {
+	margin-bottom: 40px;
+	padding: 5px;
+	border: 1px solid $gray;
+	width: 100%;
+}
+
+.selected-filters-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .shop-filter-item {
 	justify-content: space-between;
 	width: 100%;
@@ -35,13 +49,21 @@
 	transition: all 0.3s ease 0s;
 }
 
+.filter-price-range {
+	font-family: $first-font;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 157%;
+	color: $dark-gray;
+}
+
 .products-container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	margin-left: 50px;
+	padding-left: 10px;
 }
 
 .ant-pagination {
@@ -63,4 +85,15 @@
 
 .ant-list-split .ant-list-item {
 	border-block-end: none;
+}
+
+.ant-list-split.ant-list-something-after-last-item .ant-spin-container>.ant-list-items>.ant-list-item:last-child {
+	border-block-end: none;
+}
+
+.ant-spin-nested-loading .ant-spin-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
