@@ -8,7 +8,7 @@ const ProductCard = ({ value, index }) => {
 	return (
 		<div className={'product-card-container'}>
 			<div span={20} className={'product-card-main-photo'}>
-				<Link to={`${value.id}`}>
+				<Link to={`/${value.id}`}>
 					<img src={value.images[1]} alt="" />
 				</Link>
 				<Button type={'half-opacity'} children={'Add to cart'} />
