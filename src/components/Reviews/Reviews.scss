@@ -1,0 +1,71 @@
+@import '../../styles/main.scss';
+
+.reviews-container {
+	width: 100%;
+
+	h5 {
+		font-family: $first-font;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 130%;
+		color: $black;
+		margin-bottom: 5px;
+	}
+}
+
+.product-rate {
+	color: #000;
+}
+
+.review-items {
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+}
+
+.review-item {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.review-item:not(:last-child) {
+	border-bottom: 1px solid $gray;
+	padding-bottom: 35px;
+}
+
+.review-container {
+	.review-container-description {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 231%;
+		text-transform: capitalize;
+		color: $dark-gray;
+	}
+
+	.review-container-item {
+		border-bottom: 1px solid $gray;
+	}
+}
+
+.ant-form-item-required {
+	flex-direction: row-reverse;
+}
+
+.ant-form-item-required::before {
+	margin-left: 1px;
+}
+
+.ant-form-item-required::after {
+	width: 0;
+	margin: 0 !important;
+}
+
+.product-ratting {
+	svg {}
+}
+
+:where(.css-dev-only-do-not-override-nsa1nr).ant-rate {
+	color: #000;
+}

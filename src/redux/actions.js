@@ -1,5 +1,5 @@
 
-import { CREATE_SHOPPING_CART_PRODUCT, DELETE_SHOPPING_CART_PRODUCT, EDIT_SHOPPING_CART_PRODUCT } from "./types";
+import { CREATE_SHOPPING_CART_PRODUCT, DELETE_SHOPPING_CART_PRODUCT, EDIT_SHOPPING_CART_PRODUCT, CREATE_PRODUCT_REVIEW } from "./types";
 
 
 
@@ -14,6 +14,18 @@ export function addProductToShoppingCart(product, quantity, color, size) {
 			quantity: quantity,
 			size: size,
 			image: product.images[color][0]
+		}
+	}
+}
+
+export function addReviewToProduct(email, review, rate, name) {
+	return {
+		type: CREATE_PRODUCT_REVIEW, payload:
+		{
+			userEmail: email,
+			userName: name,
+			userRate: rate,
+			userReview: review
 		}
 	}
 }

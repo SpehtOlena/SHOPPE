@@ -8,7 +8,6 @@ const Home = () => {
 		<div>
 			<Banner />
 			<ShopLatest />
-			<Button onClick={() => console.log('test')}>click</Button>
 		</div>
 	)
 }

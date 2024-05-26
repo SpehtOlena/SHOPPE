@@ -60,6 +60,24 @@ export default {
 			"colorPrimary": "rgb(191, 191, 191)",
 			"colorPrimaryBorder": "rgb(191, 191, 191)",
 			"colorPrimaryHover": "rgba(191, 191, 191)"
+		},
+		"Tabs": {
+			"inkBarColor": "rgb(112, 112, 112)",
+			"itemActiveColor": "rgb(0, 0, 0)",
+			"itemSelectedColor": "rgb(0, 0, 0)",
+			"cardPadding": "8px 36px",
+			"itemHoverColor": "rgb(0, 0, 0)",
+			"fontFamily": "DM Sans, serif",
+			"fontSize": 20,
+			"horizontalItemPadding": "12px 35px",
+			"horizontalMargin": "0 0 50px 0"
+		},
+		"Form": {
+			"labelRequiredMarkColor": "rgb(112, 112, 112)",
+			"labelColor": "rgb(112, 112, 112)"
+		},
+		"Rate": {
+			"fontSize": 20
 		}
 	}
 }

@@ -1,0 +1,28 @@
+@import '../../styles/main.scss';
+
+.counter-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	border-radius: 4px;
+	width: 102px;
+	height: 53px;
+	background: $light-gray;
+	font-size: 16px;
+	font-family: $first-font;
+	color: $dark-gray;
+	overflow: hidden;
+}
+
+:where(.css-dev-only-do-not-override-ge612w).ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+	color: var(--gray-1, #828282);
+	background-color: #C4C4C4;
+	border: 1px solid var(--gray-1, #828282);
+}
+
+:where(.css-dev-only-do-not-override-17a5dsa).ant-btn-default:disabled,
+:where(.css-dev-only-do-not-override-17a5dsa).ant-btn-default.ant-btn-disabled {
+	background: #fff;
+}
