@@ -70,6 +70,7 @@ const Shop = () => {
 		setSliderValues([0, 1000])
 		setShowFilterDetails(false)
 		setProductsWithFilter(products)
+		setShowFilterItems(false)
 	}
 
 	return (

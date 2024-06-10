@@ -1,16 +1,17 @@
-import { Row, Col, Typography, Space, Rate, Tabs } from 'antd';
+import { Row, Col, Typography, Space, Rate, Tabs, List } from 'antd';
 import './ProductPage.scss';
 import Button from "../../components/Button/Button";
 import Counter from "../../components/Counter/Counter";
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { FiHeart } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import Reviews from '../../components/Reviews/Reviews';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 
 const ProductPage = () => {
@@ -146,8 +147,33 @@ const ProductPage = () => {
 					</Space>
 				</Col>
 			</Row>
-			<Row>
+			<Row className={'product-details'}>
 				<Tabs items={items} />
+			</Row>
+			<Row className={'similar-items-container'}>
+				<Typography.Title level={4} className={'similar-items-title'}>Similar Items</Typography.Title>
+				<List
+					position={'bottom'}
+					style={{ width: "100%" }}
+					pagination={{
+						position: 'top',
+						defaultPageSize: 3,
+						simple: true,
+						total: 6,
+						responsive: true
+					}}
+					grid={{
+						gutter: 16,
+						column: 3
+					}}
+					gutter={80}
+					dataSource={products}
+					renderItem={(value, index) => (
+						<List.Item style={{ width: "100%", display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+							<ProductCard key={index} value={value} index={index} />
+						</List.Item>
+					)}
+				/>
 			</Row>
 		</div>
 	)

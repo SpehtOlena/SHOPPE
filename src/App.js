@@ -19,7 +19,9 @@ function App() {
 	const location = useLocation();
 	const navigate = useNavigate();
 	useFirestoreConnect(() => [
-		{ collection: 'products' }
+		{
+			collection: 'products',
+		}
 	])
 
 	useEffect(() => {
@@ -73,7 +75,9 @@ function App() {
 				<Row justify={'space-between'} align={'middle'}>
 					<Col span={10}>
 						<ul className={'footer-menu'}>
-							<li>{'Contact'.toUpperCase()}</li>
+							<Link to={'/contact_us'}>
+								<li>{'Contact'.toUpperCase()}</li>
+							</Link>
 							<li>{'Term of services'.toUpperCase()}</li>
 							<li>{'Shipping and returns'.toUpperCase()}</li>
 						</ul>

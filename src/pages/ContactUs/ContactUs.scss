@@ -1,0 +1,51 @@
+@import '../../styles/main.scss';
+
+.contact-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: center;
+	width: 75%;
+	margin: 125px auto;
+
+	h3 {
+		font-family: $first-font;
+		font-weight: 500;
+		font-size: 33px;
+		line-height: 130%;
+		color: $black;
+	}
+
+	h5 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 130%;
+		text-align: center;
+		color: $black;
+		width: 70%;
+	}
+}
+
+.contact-item {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	border-bottom: 1px solid $gray;
+	margin-top: 100px;
+	font-family: $first-font;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 169%;
+	color: $dark-gray;
+	width: 100%;
+}
+
+.ant-select-selector {
+	border: none !important;
+}
+
+.contact-button {
+	display: flex;
+	justify-content: center;
+}

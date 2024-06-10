@@ -1,7 +1,7 @@
 import { Row, Col, Typography, Form, Rate, Checkbox, Input } from 'antd';
 import './Reviews.scss';
 import Button from "../Button/Button";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 const Reviews = ({ product, productId }) => {
@@ -9,11 +9,6 @@ const Reviews = ({ product, productId }) => {
 	const [form] = Form.useForm();
 	const [isLoading, setIsLoading] = useState(false);
 	const dispatch = useDispatch();
-
-	useEffect(() => {
-		setValue(0)
-	}, []);
-
 	const submitFormToFirestore = (productId, formData) => {
 		return (dispatch, getState, { getFirebase }) => {
 			const firestore = getFirebase().firestore();
@@ -110,11 +105,15 @@ const Reviews = ({ product, productId }) => {
 								className={'review-container-item'}
 								label="Your Review"
 								name="review"
+								hasFeedback
 								rules={[
 									{
 										required: true,
 										message: 'Your Review',
 									},
+									{
+										type: 'string'
+									}
 								]}
 							>
 								<Input.TextArea />
@@ -124,11 +123,15 @@ const Reviews = ({ product, productId }) => {
 								className={'review-container-item'}
 								label="Enter your name"
 								name="name"
+								hasFeedback
 								rules={[
 									{
 										required: true,
 										message: 'Enter your name',
 									},
+									{
+										type: 'string'
+									}
 								]}
 							>
 								<Input />
@@ -138,12 +141,16 @@ const Reviews = ({ product, productId }) => {
 								className={'review-container-item'}
 								label="Enter your Email"
 								name="email"
+								hasFeedback
 								rules={[
 									{
 										required: true,
 										message: 'Enter your Email',
 										type: "email"
 									},
+									{
+										type: 'email'
+									}
 								]}
 							>
 								<Input />

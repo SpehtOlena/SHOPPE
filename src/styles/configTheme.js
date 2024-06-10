@@ -26,7 +26,13 @@ export default {
 			"colorPrimaryActive": "rgb(11, 11, 11)",
 			"colorPrimary": "rgb(196, 196, 196)",
 			"colorPrimaryHover": "rgb(196, 196, 196)",
-			"colorBorder": "rgba(245, 34, 45, 0)"
+			"colorBorder": "rgba(245, 34, 45, 0)",
+			"colorTextPlaceholder": "rgb(112, 112, 112)",
+			"paddingInline": 0
+		},
+		"Select": {
+			"colorTextPlaceholder": "rgb(112, 112, 112)",
+			"paddingSM": 0
 		},
 		"Carousel": {
 			"dotWidth": 8,

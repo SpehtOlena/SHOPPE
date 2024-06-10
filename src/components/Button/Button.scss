@@ -3,7 +3,7 @@
 .button {
 	border: 1px solid $black;
 	border-radius: 4px;
-	min-width: 70%;
+	min-width: 370px;
 	height: 53px;
 	background: $white;
 	text-transform: uppercase;
@@ -88,6 +88,7 @@
 	font-weight: 700;
 	font-size: 20px;
 	text-transform: capitalize;
+	padding: 0;
 	color: $accent;
 	cursor: pointer;
 	border: none;
