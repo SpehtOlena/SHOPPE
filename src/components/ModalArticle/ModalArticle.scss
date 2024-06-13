@@ -1,0 +1,28 @@
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	min-height: 100%;
+	background: rgba(134, 168, 178, 0.65);
+	backdrop-filter: blur(2px);
+}
+
+.modal {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #F8F8F8;
+	padding: 20px 5%;
+	align-items: flex-end;
+	width: 90%;
+	border: 1px solid #000;
+
+}
+
+.modal button {
+	position: relative;
+	right: 20px;
+}
