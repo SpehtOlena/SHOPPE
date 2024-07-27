@@ -8,6 +8,9 @@ const Button = ({ children, type, icon, onClick }) => {
 		case 'primary': {
 			return <button onClick={onClick} className={'button-primary'}>{children}</button>
 		}
+		case 'black': {
+			return <button onClick={onClick} className={'button-black'}>{children}</button>
+		}
 		case 'w-100': {
 			return <button onClick={onClick} className={'button-w-100'}>{children}</button>
 		}

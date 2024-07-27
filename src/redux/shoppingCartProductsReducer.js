@@ -1,4 +1,4 @@
-import { GET_SHOPPING_CART_PRODUCTS, GET_SHOPPING_CART_PRODUCT, CREATE_SHOPPING_CART_PRODUCT, EDIT_SHOPPING_CART_PRODUCT, DELETE_SHOPPING_CART_PRODUCT } from "./types"
+import { GET_SHOPPING_CART_PRODUCTS, GET_SHOPPING_CART_PRODUCT, CREATE_SHOPPING_CART_PRODUCT, EDIT_SHOPPING_CART_PRODUCT, DELETE_SHOPPING_CART_PRODUCT, CLEAR_SHOPPING_CART_PRODUCTS } from "./types"
 
 const initialState = {
 	data: [],
@@ -10,12 +10,27 @@ export const shoppingCartProductsReducer = (state = initialState, action) => {
 		case GET_SHOPPING_CART_PRODUCTS: {
 			return { ...state, data: action.payload }
 		}
+
 		case GET_SHOPPING_CART_PRODUCT: {
 			return { ...state, item: action.payload }
 		}
+
 		case CREATE_SHOPPING_CART_PRODUCT: {
-			return { ...state, data: [...state.data, action.payload] }
+			if (state.data.find(value => value.id === action.payload.id)) {
+				return {
+					...state, data: state.data.map(value => {
+						if (value.id === action.payload.id) {
+							return { ...value, quantity: value.quantity + action.payload.quantity }
+						} else {
+							return value
+						}
+					})
+				}
+			} else {
+				return { ...state, data: [...state.data, action.payload] }
+			}
 		}
+
 		case EDIT_SHOPPING_CART_PRODUCT: {
 			return {
 				...state, data: state.data.map(value => {
@@ -27,11 +42,17 @@ export const shoppingCartProductsReducer = (state = initialState, action) => {
 				})
 			}
 		}
+
 		case DELETE_SHOPPING_CART_PRODUCT: {
 			return {
 				...state, data: state.data.filter(value => value.id !== action.payload.id)
 			}
 		}
+
+		case CLEAR_SHOPPING_CART_PRODUCTS: {
+			return { ...state, data: [] }
+		}
+
 		default: {
 			return state
 		}

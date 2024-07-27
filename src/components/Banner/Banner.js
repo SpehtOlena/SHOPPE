@@ -16,7 +16,7 @@ const Banner = () => {
 					<div className={'banner-content'}>
 						<h3>Silver big hoops</h3>
 						<h4>$ 68,00</h4>
-						<Link to={'/2RfWMIyNLcu9YudZXfYX'}>
+						<Link to={'/shop/2RfWMIyNLcu9YudZXfYX'}>
 							<Button type={'primary'} children={'View Product'} />
 						</Link>
 					</div>
@@ -28,7 +28,7 @@ const Banner = () => {
 					<div className={'banner-content'}>
 						<h3>Gold earrings</h3>
 						<h4>$ 76,00</h4>
-						<Link to={'/CUyeY64gR3pTruDOJY6G'}>
+						<Link to={'/shop/CUyeY64gR3pTruDOJY6G'}>
 							<Button type={'primary'} children={'View Product'} />
 						</Link>
 					</div>
@@ -40,7 +40,7 @@ const Banner = () => {
 					<div className={'banner-content'}>
 						<h3>Gold watch</h3>
 						<h4>$ 199,00</h4>
-						<Link to={'/SLfAWJvfNhojvplbMYUV'}>
+						<Link to={'/shop/SLfAWJvfNhojvplbMYUV'}>
 							<Button type={'primary'} children={'View Product'} />
 						</Link>
 					</div>
@@ -52,7 +52,7 @@ const Banner = () => {
 					<div className={'banner-content'}>
 						<h3>Earrings with pearls</h3>
 						<h4>$ 113,00</h4>
-						<Link to={'/QsOqVZV4M6NLAq8C8rcv'}>
+						<Link to={'/shop/QsOqVZV4M6NLAq8C8rcv'}>
 							<Button type={'primary'} children={'View Product'} />
 						</Link>
 					</div>
@@ -64,7 +64,7 @@ const Banner = () => {
 					<div className={'banner-content'}>
 						<h3>Necklace of black pearls </h3>
 						<h4>$ 145,00</h4>
-						<Link to={'/noXx8G9DqRwiDw0EpUJ9'}>
+						<Link to={'/shop/noXx8G9DqRwiDw0EpUJ9'}>
 							<Button type={'primary'} children={'View Product'} />
 						</Link>
 					</div>

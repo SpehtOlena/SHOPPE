@@ -1,0 +1,79 @@
+@import '../../styles/main.scss';
+
+.our-story-container {
+	width: 100%;
+	padding: 2% 20%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10%;
+
+	h2 {
+		font-family: $first-font;
+		font-weight: 500;
+		font-size: 33px;
+		line-height: 130%;
+		color: $black;
+		text-align: center;
+	}
+
+	h4 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 130%;
+		text-align: center;
+		color: $black;
+		margin-bottom: 42px;
+	}
+
+	span {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 169%;
+		color: $black;
+
+	}
+
+	h3 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 26px;
+		line-height: 135%;
+		color: $black;
+	}
+
+	img {
+		width: 100%;
+		max-height: 370px;
+		object-fit: cover;
+		border-radius: 10px;
+		margin: 20px 0px;
+	}
+}
+
+.our-story-block {
+	margin-top: 35px;
+	margin-bottom: 30px;
+
+	ul {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 167%;
+		color: $black;
+		margin: 15px 15px 35px;
+
+		li {
+			margin-bottom: 4px;
+			display: flex;
+			vertical-align: middle;
+			align-items: center;
+
+			span {
+				font-size: 22px;
+				margin-right: 10px;
+			}
+		}
+	}
+}

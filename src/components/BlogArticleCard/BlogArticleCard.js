@@ -2,30 +2,26 @@ import { useState } from 'react';
 import { Typography } from 'antd';
 import './BlogArticleCard.scss';
 import Button from "../Button/Button";
-import ModalArticle from '../ModalArticle/ModalArticle';
-import Article from '../Article/Article';
+import { Link } from 'react-router-dom';
 
-
-
-const BlogArticleCard = ({ value, index }) => {
+const BlogArticleCard = ({ value, index, activeArticle, setActiveArticle }) => {
 	const [modalOpen, setModalOpen] = useState(false);
-	const [activeArticle, setActiveArticle] = useState('');
+
 	return (
-		<>
-			<div className={'article-card-container'}>
-				<img src={value.articleImg} alt="" />
-				<Typography.Title level={5}>{value.subtitle}</Typography.Title>
-				<Typography.Title level={3}>{value.title}</Typography.Title>
-				<Typography.Text>{value.annotation}</Typography.Text>
-				<Button onClick={() => { setActiveArticle(value); setModalOpen(true) }} type={'link'}>Read More</Button>
+		<div className={'article-card-container'}>
+			<img src={value.articleImg} alt="" />
+			<div className={'article-subtitle'}>
+				<Typography.Title level={5}>{value.category}</Typography.Title>
+				<span> - </span>
+				<Typography.Title level={5}>{value.date}</Typography.Title>
 			</div>
-			<ModalArticle isOpen={modalOpen} onClose={() => setModalOpen(false)}>
-				{
-					!!activeArticle.id &&
-					<Article activeArticle={activeArticle} />
-				}
-			</ModalArticle >
-		</>
+			<Typography.Title level={3}>{value.title}</Typography.Title>
+			<Typography.Text>{value.annotation}</Typography.Text>
+			<Link to={`/blog/${value.id}`}>
+				<Button onClick={() => { setActiveArticle(value) }} type={'link'}>Read More</Button>
+			</Link>
+			{/* <Button onClick={() => { setActiveArticle(value) }} type={'link'}>Read More</Button> */}
+		</div>
 	)
 }
 export default BlogArticleCard

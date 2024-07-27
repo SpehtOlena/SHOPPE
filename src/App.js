@@ -1,4 +1,4 @@
-import { Col, Divider, Input, Layout, Row, Space } from 'antd';
+import { Affix, Col, Divider, Input, Layout, Row, Space } from 'antd';
 import './App.scss';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
@@ -25,6 +25,7 @@ function App() {
 	])
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		if (location.pathname === '/') {
 			navigate('/home')
 		}
@@ -45,28 +46,32 @@ function App() {
 	]
 	return (
 		<Layout className="app-container">
-			<Header className={'header-container'}>
-				<Link className={'header-logo'}>
-					<img src={Logo} alt='logo' />
-				</Link>
-				<div className={'header-menu'}>
-					{
-						menuItems.map(value =>
-							<li onClick={() =>
-								setActiveMenuItems(value.key)}
-								key={value.key}
-								className={activeMenuItems === value.key ? 'active-menu-item' : ''} >
-								{value.label}
-							</li>)
-					}
-					<Space size={'large'} className={'header-menu-icons'}>
-						<span>|</span>
-						<IoSearchOutline size={20} />
-						<AiOutlineShoppingCart size={20} />
-						<LuUser size={20} />
-					</Space>
-				</div>
-			</Header>
+			<Affix>
+				<Header className={'header-container'}>
+					<Link className={'header-logo'}>
+						<img src={Logo} alt='logo' />
+					</Link>
+					<div className={'header-menu'}>
+						{
+							menuItems.map(value =>
+								<li onClick={() =>
+									setActiveMenuItems(value.key)}
+									key={value.key}
+									className={activeMenuItems === value.key ? 'active-menu-item' : ''} >
+									{value.label}
+								</li>)
+						}
+						<Space size={'large'} className={'header-menu-icons'}>
+							<span>|</span>
+							<IoSearchOutline size={20} />
+							<Link to={'/shopping_cart'}>
+								<AiOutlineShoppingCart size={20} />
+							</Link>
+							<LuUser size={20} />
+						</Space>
+					</div>
+				</Header>
+			</Affix>
 			<Content className={'content-container'}>
 				<Outlet />
 			</Content>

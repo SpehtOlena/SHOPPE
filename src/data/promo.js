@@ -1,0 +1,22 @@
+export const promoCodes = [
+	{ promoCode: "SAVE10", discountPercentage: 10 },
+	{ promoCode: "WELCOME20", discountPercentage: 20 },
+	{ promoCode: "SUMMER15", discountPercentage: 15 },
+	{ promoCode: "FALL25", discountPercentage: 25 },
+	{ promoCode: "WINTER30", discountPercentage: 30 },
+	{ promoCode: "SPRING10", discountPercentage: 10 },
+	{ promoCode: "HOLIDAY20", discountPercentage: 20 },
+	{ promoCode: "NEWYEAR25", discountPercentage: 25 },
+	{ promoCode: "BLACKFRIDAY40", discountPercentage: 40 },
+	{ promoCode: "CYBERMONDAY35", discountPercentage: 35 },
+	{ promoCode: "BIRTHDAY50", discountPercentage: 50 },
+	{ promoCode: "ANNIVERSARY30", discountPercentage: 30 },
+	{ promoCode: "VIP20", discountPercentage: 20 },
+	{ promoCode: "STUDENT15", discountPercentage: 15 },
+	{ promoCode: "MILITARY25", discountPercentage: 25 },
+	{ promoCode: "TEACHER20", discountPercentage: 20 },
+	{ promoCode: "SENIOR30", discountPercentage: 30 },
+	{ promoCode: "FAMILY15", discountPercentage: 15 },
+	{ promoCode: "FRIENDS20", discountPercentage: 20 },
+	{ promoCode: "COUPLE25", discountPercentage: 25 }
+];

@@ -45,3 +45,11 @@
 		margin-top: 22px;
 	}
 }
+
+.article-subtitle {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: baseline;
+	gap: 5px;
+}

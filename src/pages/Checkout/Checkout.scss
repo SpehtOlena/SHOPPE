@@ -1,0 +1,71 @@
+@import '../../styles/main.scss';
+
+.checkout-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 96px;
+	width: 100%;
+
+	h2 {
+		font-family: $first-font;
+		font-weight: 500;
+		font-size: 33px;
+		line-height: 130%;
+		color: $black;
+		margin-bottom: 56px;
+	}
+
+	h3 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 26px;
+		line-height: 135%;
+		color: $black;
+		margin-bottom: 25px;
+	}
+}
+
+.billing-form-item {
+	border-bottom: 1px solid $gray;
+	font-family: $first-font;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 169%;
+	color: $dark-gray;
+	margin-top: 20px;
+	padding-bottom: 8px;
+}
+
+.billing-form-checkbox {
+	display: flex;
+	flex-direction: column;
+}
+
+.billing-form-checkbox-item {
+	width: 100%;
+	font-family: $first-font;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 169%;
+	color: $black;
+	margin-bottom: 15px;
+}
+
+.order-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 720px;
+	background: $light-gray;
+	padding: 39px 59px;
+
+	h5 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 169%;
+		color: $dark-gray;
+	}
+}

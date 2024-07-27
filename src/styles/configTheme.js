@@ -21,7 +21,7 @@ export default {
 		},
 		"Input": {
 			"activeBorderColor": "rgba(196, 196, 196, 0)",
-			"hoverBorderColor": "rgba(196, 196, 196, 0)",
+			// "hoverBorderColor": "rgba(196, 196, 196, 0)",
 			"hoverBorderColor": "none",
 			"colorPrimaryActive": "rgb(11, 11, 11)",
 			"colorPrimary": "rgb(196, 196, 196)",
@@ -84,6 +84,20 @@ export default {
 		},
 		"Rate": {
 			"fontSize": 20
+		},
+		"Collapse": {
+			"colorBorder": "rgba(252, 251, 251, 0)",
+			"headerBg": "rgba(255, 255, 255, 0)"
+		},
+		"Table": {
+			"cellPaddingBlock": 26,
+			"cellPaddingInline": 35,
+			"colorBgContainer": "rgba(237, 234, 232, 0)",
+			"fontFamily": "DM Sans",
+			"colorTextHeading": "rgb(0, 0, 0)",
+			"cellFontSize": 16,
+			"headerSplitColor": "rgb(237, 234, 232, 0)",
+			"headerBg": "rgb(237, 234, 232, 0)"
 		}
 	}
 }
