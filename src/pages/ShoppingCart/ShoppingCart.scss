@@ -1,0 +1,115 @@
+@import '../../styles/main.scss';
+
+.shopping-cart-container {
+	margin: 86px auto;
+
+	h2 {
+		text-align: center;
+		margin-bottom: 64px;
+	}
+
+	h4 {
+		font-family: $first-font;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 130%;
+		color: $black;
+	}
+
+	h5 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 130%;
+		color: $black;
+	}
+
+}
+
+.product-image {
+	width: 136px;
+	height: 136px;
+}
+
+.product-price {
+	font-family: $first-font;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 169%;
+	color: $accent;
+}
+
+.shopping-cart-form {
+	width: 100%;
+}
+
+.shopping-calculate-container {
+	padding: 5% 0;
+	width: 100%;
+
+	h3 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 26px;
+		line-height: 96%;
+		color: $black;
+	}
+
+	.ant-form-item {
+		margin-bottom: 0;
+	}
+
+	.ant-collapse>.ant-collapse-item>.ant-collapse-header {
+		border-radius: 0 0 0px 0px;
+		width: 100%;
+		padding: 20px 0;
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 169%;
+		color: $black;
+	}
+
+	.ant-select-selector .ant-select-selection-search-input {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 167%;
+		color: $dark-gray
+	}
+
+	.ant-collapse .ant-collapse-content>.ant-collapse-content-box {
+		padding: 0;
+	}
+}
+
+.shopping-cart-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.coupon-input {
+	border: none;
+	border-bottom: 1px solid $dark-gray;
+	height: 53px;
+
+	&:hover {
+		border-bottom: 1px solid $dark-gray;
+		opacity: 0.7;
+	}
+
+	&:focus {
+		border-bottom: 1px solid $dark-gray;
+	}
+}
+
+.cart-button-container {
+	width: 100%;
+	margin: 45px 0;
+
+	button {
+		width: 100%;
+	}
+}

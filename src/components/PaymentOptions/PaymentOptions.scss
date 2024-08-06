@@ -1,0 +1,54 @@
+@import '../../styles/main.scss';
+
+.custom-radio-group .ant-radio-wrapper {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.custom-radio-group .ant-radio-wrapper:hover .ant-radio,
+.custom-radio-group .ant-radio:hover .ant-radio-inner,
+.custom-radio-group .ant-radio-input:focus+.ant-radio-inner {
+	border-color: black;
+}
+
+.custom-radio-group .ant-radio-inner {
+	width: 16px;
+	height: 16px;
+	border-width: 2px;
+	border-color: black;
+}
+
+.custom-radio-group .ant-radio-inner::after {
+	width: 16px;
+	height: 16px;
+	top: 50%;
+	left: 50%;
+
+	background-color: rgb(207, 121, 121);
+}
+
+.custom-radio-group .ant-radio-checked .ant-radio-inner::after {
+	background-color: black;
+	border-radius: 50%;
+
+}
+
+.custom-radio-group .ant-radio-checked .ant-radio-inner {
+	border-color: black;
+}
+
+.radio-description {
+	font-family: $first-font;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 167%;
+	color: $dark-gray;
+}
+
+.radio-label-group {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+}

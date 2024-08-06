@@ -1,4 +1,4 @@
-import { Col, Divider, Input, Layout, Row, Space } from 'antd';
+import { Affix, Col, Divider, Input, Layout, Row, Space } from 'antd';
 import './App.scss';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
@@ -12,7 +12,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import { useEffect, useState } from 'react';
-import { useFirestoreConnect } from 'react-redux-firebase';
+import { isEmpty, isLoaded, useFirestoreConnect } from 'react-redux-firebase';
+import { useSelector } from 'react-redux';
 
 function App() {
 	const [activeMenuItems, setActiveMenuItems] = useState('');
@@ -24,7 +25,10 @@ function App() {
 		}
 	])
 
+	const products = useSelector(state => state.firestore.ordered.products);
+
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		if (location.pathname === '/') {
 			navigate('/home')
 		}
@@ -45,31 +49,41 @@ function App() {
 	]
 	return (
 		<Layout className="app-container">
-			<Header className={'header-container'}>
-				<Link className={'header-logo'}>
-					<img src={Logo} alt='logo' />
-				</Link>
-				<div className={'header-menu'}>
-					{
-						menuItems.map(value =>
-							<li onClick={() =>
-								setActiveMenuItems(value.key)}
-								key={value.key}
-								className={activeMenuItems === value.key ? 'active-menu-item' : ''} >
-								{value.label}
-							</li>)
-					}
-					<Space size={'large'} className={'header-menu-icons'}>
-						<span>|</span>
-						<IoSearchOutline size={20} />
-						<AiOutlineShoppingCart size={20} />
-						<LuUser size={20} />
-					</Space>
-				</div>
-			</Header>
-			<Content className={'content-container'}>
-				<Outlet />
-			</Content>
+			<Affix>
+				<Header className={'header-container'}>
+					<Link className={'header-logo'}>
+						<img src={Logo} alt='logo' />
+					</Link>
+					<div className={'header-menu'}>
+						{
+							menuItems.map(value =>
+								<li onClick={() =>
+									setActiveMenuItems(value.key)}
+									key={value.key}
+									className={activeMenuItems === value.key ? 'active-menu-item' : ''} >
+									{value.label}
+								</li>)
+						}
+						<Space size={'large'} className={'header-menu-icons'}>
+							<span>|</span>
+							<IoSearchOutline size={20} />
+							<Link to={'/shopping_cart'}>
+								<AiOutlineShoppingCart size={20} />
+							</Link>
+							<LuUser size={20} />
+						</Space>
+					</div>
+				</Header>
+			</Affix>
+			{
+				!isLoaded(products)
+					? <div className={'loading-empty'}>Loading</div>
+					: isEmpty(products)
+						? <div className={'loading-empty'}>Is empty</div>
+						: <Content className={'content-container'}>
+							<Outlet />
+						</Content>
+			}
 			<Footer className={'footer-container'}>
 				<Divider />
 				<Row justify={'space-between'} align={'middle'}>

@@ -1,19 +1,19 @@
 
-import { CREATE_SHOPPING_CART_PRODUCT, DELETE_SHOPPING_CART_PRODUCT, EDIT_SHOPPING_CART_PRODUCT, CREATE_PRODUCT_REVIEW } from "./types";
+import { CREATE_SHOPPING_CART_PRODUCT, DELETE_SHOPPING_CART_PRODUCT, EDIT_SHOPPING_CART_PRODUCT, CREATE_PRODUCT_REVIEW, CLEAR_SHOPPING_CART_PRODUCTS } from "./types";
 
 
 
-export function addProductToShoppingCart(product, quantity, color, size) {
+export function addProductToShoppingCart(product, quantity) {
 	return {
 		type: CREATE_SHOPPING_CART_PRODUCT, payload:
 		{
 			name: product.name,
-			color: color,
-			id: product.id + color + size,
+			id: product.id,
 			price: product.price,
 			quantity: quantity,
-			size: size,
-			image: product.images[color][0]
+			preciousMetal: product.preciousMetal,
+			gemStone: product.gemStone,
+			image: product.images[0]
 		}
 	}
 }
@@ -41,5 +41,12 @@ export function deleteProductFromShoppingCart(product) {
 	return {
 		type: DELETE_SHOPPING_CART_PRODUCT,
 		payload: product
+	}
+}
+
+
+export function clearShoppingCart() {
+	return {
+		type: CLEAR_SHOPPING_CART_PRODUCTS
 	}
 }

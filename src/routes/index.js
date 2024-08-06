@@ -5,8 +5,12 @@ import Shop from "../pages/Shop/Shop";
 import Blog from "../pages/Blog/Blog";
 import OurStory from "../pages/OurStory/OurStory";
 import Home from "../pages/Home/Home";
-import ProductPage from "../pages/ProductPage/ProductPage"
+import ProductPage from "../pages/ProductPage/ProductPage";
 import ContactUs from "../pages/ContactUs/ContactUs";
+import Article from "../pages/Article/Article";
+import ShoppingCart from "../pages/ShoppingCart/ShoppingCart";
+import Checkout from "../pages/Checkout/Checkout";
+import Confirmation from "../pages/Confirmation/Confirmation";
 
 export const routes = createBrowserRouter([
 	{
@@ -30,17 +34,35 @@ export const routes = createBrowserRouter([
 				element: <Home />
 			},
 			{
-				path: '/:productId',
+				path: '/shop/:productId',
 				element: <ProductPage />
 			},
 			{
 				path: '/contact_us',
 				element: <ContactUs />
+			},
+			{
+				path: 'blog/:articleId',
+				element: <Article />
+			},
+			,
+			{
+				path: 'shopping_cart',
+				element: <ShoppingCart />
+			},
+			{
+				path: 'shopping_cart/checkout',
+				element: <Checkout />
+			}
+			,
+			{
+				path: 'shopping_cart/confirmation',
+				element: <Confirmation />
+			},
+			{
+				path: "*",
+				element: <NotFound />
 			}
 		]
-	},
-	{
-		path: "*",
-		element: <NotFound />
 	}
 ])

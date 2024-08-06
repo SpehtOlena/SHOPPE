@@ -21,14 +21,15 @@ export default {
 		},
 		"Input": {
 			"activeBorderColor": "rgba(196, 196, 196, 0)",
-			"hoverBorderColor": "rgba(196, 196, 196, 0)",
+			// "hoverBorderColor": "rgba(196, 196, 196, 0)",
 			"hoverBorderColor": "none",
 			"colorPrimaryActive": "rgb(11, 11, 11)",
 			"colorPrimary": "rgb(196, 196, 196)",
 			"colorPrimaryHover": "rgb(196, 196, 196)",
 			"colorBorder": "rgba(245, 34, 45, 0)",
 			"colorTextPlaceholder": "rgb(112, 112, 112)",
-			"paddingInline": 0
+			"paddingInline": 0,
+			"inputFontSize": 16
 		},
 		"Select": {
 			"colorTextPlaceholder": "rgb(112, 112, 112)",
@@ -84,6 +85,24 @@ export default {
 		},
 		"Rate": {
 			"fontSize": 20
+		},
+		"Collapse": {
+			"colorBorder": "rgba(252, 251, 251, 0)",
+			"headerBg": "rgba(255, 255, 255, 0)"
+		},
+		"Table": {
+			"cellPaddingBlock": 8,
+			"cellPaddingInline": 0,
+			"colorBgContainer": "rgba(237, 234, 232, 0)",
+			"fontFamily": "DM Sans",
+			"colorTextHeading": "rgb(0, 0, 0)",
+			"cellFontSize": 16,
+			"headerSplitColor": "rgb(237, 234, 232, 0)",
+			"headerBg": "rgb(237, 234, 232, 0)"
+		},
+		"Radio": {
+			"fontFamily": "DM Sans, serif",
+			"fontSize": 16,
 		}
 	}
 }

@@ -4,21 +4,19 @@ import './index.css';
 import { RouterProvider } from 'react-router-dom';
 import { routes } from './routes';
 import { ConfigProvider } from 'antd';
-import "./styles/reset.css";
+import './styles/reset.css';
 import configTheme from './styles/configTheme';
 import { Provider } from 'react-redux';
-import { rrfProps, store } from './redux/store';
-import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
-
+import { store } from './redux/store';
+import CustomReactReduxFirebaseProvider from './redux/CustomReactReduxFirebaseProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<Provider store={store}>
-		<ReactReduxFirebaseProvider {...rrfProps}>
+		<CustomReactReduxFirebaseProvider>
 			<ConfigProvider theme={configTheme}>
 				<RouterProvider router={routes} />
 			</ConfigProvider>
-		</ReactReduxFirebaseProvider>
+		</CustomReactReduxFirebaseProvider>
 	</Provider>
 );
-
