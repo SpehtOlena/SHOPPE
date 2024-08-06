@@ -25,6 +25,14 @@
 		color: $black;
 		margin-bottom: 25px;
 	}
+
+	h5 {
+		font-family: $first-font;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 169%;
+		color: $dark-gray;
+	}
 }
 
 .billing-form-item {
@@ -61,11 +69,29 @@
 	background: $light-gray;
 	padding: 39px 59px;
 
-	h5 {
-		font-family: $first-font;
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 169%;
-		color: $dark-gray;
+	.title-bold {
+		font-weight: 700;
+	}
+
+}
+
+.checkout-order-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 15px;
+}
+
+.checkout-divider {
+	border-block-start: 2px solid #D8D8D8;
+	margin-bottom: 15px;
+}
+
+.order-button-container {
+	width: 100%;
+
+	button {
+		width: 100%;
 	}
 }

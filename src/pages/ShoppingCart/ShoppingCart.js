@@ -264,7 +264,7 @@ const ShoppingCart = () => {
 			<Typography.Title level={2}>Shopping Cart</Typography.Title>
 			{
 				!!data.length ?
-					<Row justify={'space-around'}>
+					<Row justify={'space-between'}>
 						<Col span={12} style={{ width: '100%' }}>
 							<Space direction={'vertical'} style={{ width: '100%' }} size={'large'}>
 								<Table

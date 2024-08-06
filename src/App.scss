@@ -75,6 +75,15 @@
 	padding: 0;
 }
 
+.loading-empty {
+	height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: $first-font;
+	font-size: 20px;
+}
+
 .content-container {
 	margin-bottom: 60px;
 }

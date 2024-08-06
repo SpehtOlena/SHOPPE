@@ -12,7 +12,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 import { useEffect, useState } from 'react';
-import { useFirestoreConnect } from 'react-redux-firebase';
+import { isEmpty, isLoaded, useFirestoreConnect } from 'react-redux-firebase';
+import { useSelector } from 'react-redux';
 
 function App() {
 	const [activeMenuItems, setActiveMenuItems] = useState('');
@@ -23,6 +24,8 @@ function App() {
 			collection: 'products',
 		}
 	])
+
+	const products = useSelector(state => state.firestore.ordered.products);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -72,9 +75,15 @@ function App() {
 					</div>
 				</Header>
 			</Affix>
-			<Content className={'content-container'}>
-				<Outlet />
-			</Content>
+			{
+				!isLoaded(products)
+					? <div className={'loading-empty'}>Loading</div>
+					: isEmpty(products)
+						? <div className={'loading-empty'}>Is empty</div>
+						: <Content className={'content-container'}>
+							<Outlet />
+						</Content>
+			}
 			<Footer className={'footer-container'}>
 				<Divider />
 				<Row justify={'space-between'} align={'middle'}>
