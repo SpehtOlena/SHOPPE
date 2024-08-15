@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { app, auth, firestore, database, storage } from '../firebase/firebase'
+import { app, auth, firestore, storage } from '../firebase/firebase'
 import { combineReducers } from "redux";
 import { actionTypes } from "react-redux-firebase";
 import firebase from 'firebase/compat/app';
@@ -11,6 +11,7 @@ import { productReviewsReducer } from './productReviewsReducer';
 import { actionTypes as rrfActionTypes } from 'react-redux-firebase';
 import { constants as rfConstants } from 'redux-firestore';
 import { createFirestoreInstance } from 'redux-firestore';
+import { saveOrderReducer } from "./saveOrderReducer";
 
 
 const rrfConfig = {
@@ -38,7 +39,8 @@ const rootReducer = combineReducers({
 	firebase: firebaseReducer,
 	firestore: firestoreReducer,
 	shoppingCartProducts: shoppingCartProductsReducer,
-	productReviews: productReviewsReducer
+	productReviews: productReviewsReducer,
+	saveOrders: saveOrderReducer
 })
 
 export const store = configureStore({
@@ -53,6 +55,7 @@ export const store = configureStore({
 					...Object.keys(rrfActionTypes).map(
 						(type) => `@@reactReduxFirebase/${type}`,
 					),
+					actionTypes.LOGIN, actionTypes.AUTH_LINK_ERROR
 				],
 				ignoredPaths: ['firebase', 'firestore'],
 			},

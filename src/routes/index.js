@@ -11,6 +11,7 @@ import Article from "../pages/Article/Article";
 import ShoppingCart from "../pages/ShoppingCart/ShoppingCart";
 import Checkout from "../pages/Checkout/Checkout";
 import Confirmation from "../pages/Confirmation/Confirmation";
+import MyAccount from "../pages/MyAccount/MyAccount";
 
 export const routes = createBrowserRouter([
 	{
@@ -58,6 +59,10 @@ export const routes = createBrowserRouter([
 			{
 				path: 'shopping_cart/confirmation',
 				element: <Confirmation />
+			},
+			{
+				path: "/my_account",
+				element: <MyAccount />
 			},
 			{
 				path: "*",

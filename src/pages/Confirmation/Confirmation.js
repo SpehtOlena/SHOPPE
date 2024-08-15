@@ -1,16 +1,20 @@
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react';
+
 import { Col, Row, Typography, Table, Divider } from 'antd'
 import './Confirmation.scss'
 import { FaCircleCheck } from "react-icons/fa6";
+import { useLocation } from 'react-router-dom';
 
 const Confirmation = () => {
+	const location = useLocation();
+	const { orderInfo } = location.state || {};
 	const [data, setData] = useState();
-	const shoppingCartProducts = useSelector(state => state.shoppingCartProducts.data)
+	const saveOrders = useSelector(state => state.saveOrders.data.products)
 
 	useEffect(() => {
-		setData(shoppingCartProducts);
-	}, [shoppingCartProducts]);
+		setData(saveOrders);
+	}, [saveOrders]);
 
 	const columns = [
 		{
@@ -38,6 +42,14 @@ const Confirmation = () => {
 			<div className={'confirmation-result'}>
 				<FaCircleCheck color='#A18A68' size={20} />
 				<Typography.Title level={4}>We’ve received your order</Typography.Title>
+				{orderInfo ? (
+					<>
+						<p>First Name: {orderInfo.firstName}</p>
+
+					</>
+				) : (
+					<p>Loading order details...</p>
+				)}
 			</div>
 			<Row justify={'space-between'}>
 				<Col span={11}>

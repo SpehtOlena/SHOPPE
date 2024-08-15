@@ -1,15 +1,20 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import './Checkout.scss'
+import './Checkout.scss';
 import { Checkbox, Col, Divider, Form, Input, Row, Table, Typography } from 'antd';
 import PaymentOptions from '../../components/PaymentOptions/PaymentOptions';
 import Button from "../../components/Button/Button";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { isEmpty } from 'react-redux-firebase';
+import { addOrderToUserData, clearShoppingCart } from '../../redux/actions';
 
 const Checkout = () => {
-	const [data, setData] = useState();
+	const [data, setData] = useState([]);
 	const [form] = Form.useForm();
-	const shoppingCartProducts = useSelector(state => state.shoppingCartProducts.data)
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+	const auth = useSelector(state => state.firebase.auth);
+	const shoppingCartProducts = useSelector(state => state.shoppingCartProducts.data);
 
 	useEffect(() => {
 		setData(shoppingCartProducts);
@@ -34,10 +39,32 @@ const Checkout = () => {
 					${(product.price * product.quantity)}
 				</Typography.Title>
 		}
-	]
+	];
 
-	const onFinish = () => {
-		console.log('form');
+	const onFinish = (values) => {
+		const orderInfo = {
+			firstName: values['first name'],
+			lastName: values['last name'],
+			companyName: values['company name'],
+			country: values['country'],
+			streetAddress: values['street address'],
+			zip: values.zip,
+			town: values.town,
+			phone: values.phone,
+			email: values.email,
+			notes: values.notes,
+			products: data,
+			total: data.reduce((sum, item) => sum + item.price * item.quantity * 1.2, 0).toFixed(2)
+		};
+
+		// Save the order to the user's data
+		dispatch(addOrderToUserData(orderInfo));
+
+		// Clear the shopping cart
+		dispatch(clearShoppingCart());
+
+		// Navigate to confirmation page and pass the order info as state
+		navigate('/shopping_cart/confirmation', { state: { orderInfo } });
 	};
 
 	const onFinishFailed = (errorInfo) => {
@@ -55,6 +82,7 @@ const Checkout = () => {
 						name="checkoutForm"
 						initialValues={{
 							remember: true,
+							email: !isEmpty(auth) ? auth.email : undefined,
 						}}
 						onFinish={onFinish}
 						onFinishFailed={onFinishFailed}>
@@ -84,7 +112,7 @@ const Checkout = () => {
 									rules={[
 										{
 											required: true,
-											message: 'Enter your last name',
+											message: 'Enter your Last name',
 										},
 										{
 											type: 'string'
@@ -278,14 +306,13 @@ const Checkout = () => {
 						</div>
 						<PaymentOptions />
 						<div className={'order-button-container'}>
-							<Link to={'/shopping_cart/confirmation'}>
-								<Button type={'black'}>PLACE ORDER</Button>
-							</Link>
+							<Button type={'black'} onClick={form.submit}>PLACE ORDER</Button>
 						</div>
 					</div>
 				</Col>
 			</Row>
 		</div>
 	)
-}
-export default Checkout
+};
+
+export default Checkout;

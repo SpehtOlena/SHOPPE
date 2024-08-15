@@ -70,7 +70,9 @@ function App() {
 							<Link to={'/shopping_cart'}>
 								<AiOutlineShoppingCart size={20} />
 							</Link>
-							<LuUser size={20} />
+							<Link to={'/my_account'}>
+								<LuUser size={20} />
+							</Link>
 						</Space>
 					</div>
 				</Header>

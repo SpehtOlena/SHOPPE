@@ -1,5 +1,5 @@
-
-import { CREATE_SHOPPING_CART_PRODUCT, DELETE_SHOPPING_CART_PRODUCT, EDIT_SHOPPING_CART_PRODUCT, CREATE_PRODUCT_REVIEW, CLEAR_SHOPPING_CART_PRODUCTS } from "./types";
+import { getFirestore } from 'redux-firestore';
+import { CREATE_SHOPPING_CART_PRODUCT, DELETE_SHOPPING_CART_PRODUCT, EDIT_SHOPPING_CART_PRODUCT, CREATE_PRODUCT_REVIEW, CLEAR_SHOPPING_CART_PRODUCTS, CREATE_ORDER } from "./types";
 
 
 
@@ -18,17 +18,22 @@ export function addProductToShoppingCart(product, quantity) {
 	}
 }
 
-export function addReviewToProduct(email, review, rate, name) {
-	return {
-		type: CREATE_PRODUCT_REVIEW, payload:
-		{
-			userEmail: email,
-			userName: name,
-			userRate: rate,
-			userReview: review
-		}
-	}
-}
+export const addOrderToUserData = (orderInfo) => {
+	return (dispatch, getState) => {
+		const firestore = getFirestore();
+		const userId = getState().firebase.auth.uid;
+		firestore.collection('users').doc(userId).update({
+			orders: firestore.FieldValue.arrayUnion(orderInfo)
+		}).then(() => {
+			dispatch({
+				type: CREATE_ORDER,
+				payload: orderInfo
+			});
+		}).catch((error) => {
+			console.error('Error adding order: ', error);
+		});
+	};
+};
 
 export function editProductToShoppingCard(product, quantity) {
 	return {

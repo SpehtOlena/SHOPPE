@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
-import { Provider } from 'react-redux';
-import { store, rrfProps } from './store';
+import { rrfProps } from './store';
 
 const CustomReactReduxFirebaseProvider = ({
 	children,
